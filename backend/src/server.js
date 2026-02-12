@@ -12,10 +12,10 @@ const commentRoutes = require('./routes/comment.routes');
 const app = express();
 
 // Middleware
-app.use(cors({ origin: process.env.CLIENT_URL || '*', credentials: true }));
+
 app.use(express.json());
 app.use(cors({
-  origin: ['https://community-platform.vercel.app', 'http://localhost:3000'],
+  origin: ['https://community-82c5k7r9f-abduls-projects-b66bcbf7.vercel.app/', 'http://localhost:5173'],
   credentials: true
 }));
 
