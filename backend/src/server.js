@@ -15,7 +15,7 @@ const app = express();
 
 app.use(express.json());
 app.use(cors({
-  origin: ['https://community-82c5k7r9f-abduls-projects-b66bcbf7.vercel.app/', 'http://localhost:5173'],
+  origin: ['https://community-app-teal.vercel.app/', 'http://localhost:5173'],
   credentials: true
 }));
 
