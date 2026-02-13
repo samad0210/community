@@ -15,7 +15,19 @@ const app = express();
 
 app.use(express.json());
 app.use(cors({
-  origin: ['https://community-app-teal.vercel.app/', 'http://localhost:5173'],
+  origin: function (origin, callback) {
+    const allowed = [
+      'http://localhost:3000',
+      'http://localhost:5173',
+      'https://community-app-teal.vercel.app',
+    ];
+    // Allow requests with no origin (mobile apps, Postman, etc.)
+    if (!origin || allowed.includes(origin) || origin.endsWith('.netlify.app')) {
+      callback(null, true);
+    } else {
+      callback(new Error('Not allowed by CORS'));
+    }
+  },
   credentials: true
 }));
 
